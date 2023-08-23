@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping WebSite</title>
+    <!-- swiper css link -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <!-- library bootstrap Css -->
+    <link rel="stylesheet" href="bootstrap/bootstrap.min.css">
+    <!-- boxIcon 2.1.4-->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!-- CDN font Awesome/6.4.0 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- animate.css/4.1.1 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <!-- intl-tel-input tel -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@18.1.1/build/css/intlTelInput.css">
+    <!-- my Style css -->
+    <link rel="stylesheet" href="style/style.css">
+    <!-- link icon website -->
+    <link rel="icon" href="img/logoWebSite/website.svg">
+</head>
+<body>
+    <!-- Start header fixed-->
+    <header class="" id="header">
+        <div class="container d-flex justify-content-between align-items-center position-relative">
+            <a href="#">
+                <div class="header-logo d-flex gap-4 align-items-center">
+                    <img src="img/BackImg/whiteLogo.svg" alt="logo...">
+                    <p class="m-0"><span>E-</span>Shop</p>
+                </div><!--/.header-logo-->
+            </a>
+    
+            <nav class="d-flex gap-5">
+                <a href="#" class="men">Men</a>
+                <a href="#">Women</a>
+                <a href="#">Kids</a>
+                <a href="#" id="loginNav">Login</a>
+            </nav>
+    
+            <div class="linksIconHeader d-flex gap-3 ">
+                <i class="fa-solid fa-magnifying-glass" id="iconSearch"></i>
+                <div class="position-relative">
+                    <i class="fa-solid fa-cart-shopping" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop" aria-controls="offcanvasTop"></i>
+                    <span class="numShopping position-absolute" id="numShopping">0</span>
+                </div>
+                <i class="fa-regular fa-user" id="userIcon"></i>
+                <i class="fa-solid fa-bars bar"></i>
+            </div><!--/.linksIconHeader-->
+            <div class="inputSearch container position-absolute d-none">
+                <input type="search" name="search" id="search" placeholder="Search...">
+                <button class="btnSearch">Search</button>
+            </div>
+        </div><!--/.container-->
+    
+        <div class="linksPages" id="linksPages">
+            <div class="row container justify-content-between">
+                <div class="links_men d-grid mb-3 pt-5">
+                    <h6>Sale</h6>
+                    <a href="#"><i class="fas fa-angle-right"></i> Bestsellers</a>
+                    <a href="#"><i class="fas fa-angle-right"></i> Latest Arrivals</a>
+                </div><!--/.links_men d-grid mb-3-->
+    
+                <div class="links_men d-grid mb-3">
+                    <h6>Shoes</h6>
+                    <a href="#"><i class="fas fa-angle-right"></i> Lifestyle</a>
+                    <a href="#"><i class="fas fa-angle-right"></i> Running</a>
+                    <a href="#"><i class="fas fa-angle-right"></i> Soccer</a>
+                    <a href="#"><i class="fas fa-angle-right"></i> Basketball</a>
+                    <a href="#"><i class="fas fa-angle-right"></i> Football</a>
+                    <a href="#"><i class="fas fa-angle-right"></i> Golf</a>
+                    <a href="#"><i class="fas fa-angle-right"></i> Baseball</a>
+                </div><!--/.links_men d-grid mb-3-->
+    
+                <div class="links_men d-grid mb-3">
+                    <h6>Clothing</h6>
+                    <a href="#"><i class="fas fa-angle-right"></i> Pants</a>
+                    <a href="#"><i class="fas fa-angle-right"></i> Hoodies & Sweatshirts</a>
+                    <a href="#"><i class="fas fa-angle-right"></i> Jackets & Vests</a>
+                    <a href="#"><i class="fas fa-angle-right"></i> Track Suits</a>
+                    <a href="#"><i class="fas fa-angle-right"></i> Short Sleeve Shirts</a>
+                    <a href="#"><i class="fas fa-angle-right"></i> T-Shirts</a>
+                    <a href="#"><i class="fas fa-angle-right"></i> Jerseys</a>
+                    <a href="#"><i class="fas fa-angle-right"></i> Shorts</a>
+                    <a href="#"><i class="fas fa-angle-right"></i> Jeans</a>
+                </div><!--/.links_men d-grid mb-3-->
+    
+                <div class="links_men d-grid mb-3">
+                    <h6>Accesorries</h6>
+                    <a href="#"><i class="fas fa-angle-right"></i> Backpacks</a>
+                    <a href="#"><i class="fas fa-angle-right"></i> Caps & Hats</a>
+                    <a href="#"><i class="fas fa-angle-right"></i> Watches</a>
+                    <a href="#"><i class="fas fa-angle-right"></i> Belts</a>
+                    <a href="#"><i class="fas fa-angle-right"></i> Bags</a>
+                    <a href="#"><i class="fas fa-angle-right"></i> Wallets & Cases</a>
+                    <a href="#"><i class="fas fa-angle-right"></i> Scarves</a>
+                    <a href="#"><i class="fas fa-angle-right"></i> Glasses</a>
+                </div><!--/.links_men d-grid mb-3-->
+            </div><!--/.row-->
+        </div><!--/.linksPages-->
+    </header>
+    <!-- End header fixed-->
+    
+    <!-- Start section Home swiper -->
+    <section class="home py-0 position-relative">
+        <div class="swiper home-swiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide slide slideOne animate__animated animate__zoomInDown">
+                    <div class="container animate__animated animate__lightSpeedInRight animate__delay-1s ps-5 ms-5">
+                        <h2 class="headingHome">Sale of the summer collection</h2>
+                        <a href="#ShowNew" class="likeNew">
+                            <div class="linkHome d-flex gap-4">
+                                <div class="iconHome"><i class="fa-solid fa-right-long"></i></div><!--/.iconHome-->
+                                <p style="white-space: nowrap;" class="m-0">Shop now</p>
+                            </div><!--/.linkHome-->
+                        </a>
+                    </div><!--/.container-->
+                </div><!--/swiper-slide .slide-->
+    
+                <div class="swiper-slide slide slideTwo animate__animated animate__zoomInDown">
+                    <div class="container animate__animated animate__lightSpeedInRight animate__delay-1s ps-5 ms-5">
+                        <h2 class="headingHome">Sale of the summer collection</h2>
+                        <div class="linkHome d-flex gap-4">
+                            <div class="iconHome"><i class="fa-solid fa-right-long"></i></div><!--/.iconHome-->
+                            <p style="white-space: nowrap;" class="m-0">Shop now</p>
+                        </div><!--/.linkHome-->
+                    </div><!--/.container-->
+                </div><!--/.swiper-slide slide-->
+    
+                <div class="swiper-slide slide slideThree animate__animated animate__zoomInDown">
+                    <div class="container animate__animated animate__lightSpeedInRight animate__delay-1s ps-5 ms-5">
+                        <h2 class="headingHome">Sale of the summer collection</h2>
+                        <div class="linkHome d-flex gap-4">
+                            <div class="iconHome"><i class="fa-solid fa-right-long"></i></div><!--/.iconHome-->
+                            <p style="white-space: nowrap;" class="m-0">Shop now</p>
+                        </div><!--/.linkHome-->
+                    </div><!--/.container-->
+                </div><!--/.swiper-slide slide-->
+            </div><!--/.swiper-wrapper-->
+            <div class="swiper-button-next"><i class="fa-solid fa-right-long"></i></div>
+            <div class="swiper-button-prev"><i class="fa-solid fa-left-long"></i></div>
+            <div class="swiper-pagination"></div>
+        </div><!--/.swiper home-swiper-->
+    
+        <div class="contactHoneBottom position-absolute">
+            <div class="cardsDesc d-flex gap-5 justify-content-end">
+                <div class="cardDesc d-flex align-items-start gap-4 ">
+                    <div class="imgDescCard"><img src="img/iconHome/freeShopping.svg" alt="img..."></div>
+                    <div class="descCardHome">
+                        <h6>Free Shipping</h6>
+                        <p class="mb-0">On purchases over $199</p>
+                    </div>
+                </div>
+    
+                <div class="cardDesc d-flex align-items-start gap-4 ">
+                    <div class="imgDescCard"><img src="img/iconHome/Satisfied.svg" alt="img..."></div>
+                    <div class="descCardHome">
+                        <h6>99% Satisfied Customers</h6>
+                        <p class="mb-0">Our clients' opinions <br>
+                            speak for themselves</p>
+                    </div>
+                </div>
+    
+                <div class="cardDesc d-flex align-items-start gap-4 ">
+                    <div class="imgDescCard"><img src="img/iconHome/Originality.svg" alt="img..."></div>
+                    <div class="descCardHome">
+                        <h6>Originality Guaranteed</h6>
+                        <p class="mb-0">30 days warranty for each <br>
+                            product from our store</p>
+                    </div>
+                </div>
+            </div>
+        </div><!--/.contactHoneBottom-->
+    </section>
+    <!-- End section Home swiper -->
+    
+    <!-- Start Section pop form -->
+    <section class="form_section py-0">
+        <div class="form-contact">
+            <i class="fa-solid fa-xmark form-close"></i>
+            <!-- login Sing in -->
+            <div class="form login_form">
+                <form action="" class="px-5 py-3">
+                    <h2>log in</h2>
+                    <p class="descP">Lorem Ipsum is simply dummy text of the printing</p>
+                    <div class="inputEmail w-100 mb-3">
+                        <input type="email" name="email" id="email" placeholder="E-mail" required>
+                    </div><!--/.inputEmail-->
+                    <div class="inputPassword w-100">
+                        <input type="password" name="pass" id="pass" placeholder="Password" required>
+                        <i class="fa-regular fa-eye-slash pw-hide"></i>
+                    </div><!--/.inputPassword-->
+                    <div class="checked d-flex justify-content-between mt-3">
+                        <div class="check d-flex align-items-center gap-2">
+                            <input type="checkbox" name="checkBox" id="checkBox">
+                            <label for="checkBox">Keep me signed in</label>
+                        </div><!--/.check-->
+                        <p class="forgetPass pt-3"><a href="#">Forgot password?</a></p>
+                    </div><!--/.checked-->
+                    <div class="linksForm d-flex justify-content-between gap-2 mb-3">
+                        <div class="linkFace">
+                            <a href="#"><i class="fa-brands fa-facebook-f"></i>
+                                Facebook</a>
+                        </div><!--/.linkFace-->
+                        <div class="linkEmail">
+                            <a href="#">
+                                <div class="imgEmail"><img src="img/formUser/gmail.svg" alt="EmailIcon..."></div>
+                                Gmail
+                            </a>
+                        </div><!--/.linkEmail-->
+                    </div><!--/.linksForm-->
+                    <button class="btnForm mb-3">Sign in</button>
+                    <div class="signUp d-flex justify-content-evenly">
+                        <p>Not a member yet?</p>
+                        <p class="signUpLogin"><a href="#">Sign up</a></p>
+                    </div><!--/.signUp-->
+                </form>
+            </div><!--/.form-->
+            <!-- Sing Up -->
+            <div class="form singUp_form">
+                <form action="" class="px-5 pt-2 pb-2">
+                    <h2 class="mb-4 text-center">Create an account and
+                        discover the benefits</h2>
+                    <p class="descP w-75 m-auto text-center mb-4">Lorem Ipsum is simply dummy text of the printing and
+                        typesetting industry. Lorem Ipsum has been the industry's standard</p>
+                    <div class="inputText w-100 mb-2">
+                        <input type="text" name="firstName" id="firstName" placeholder="First Name" required>
+                    </div><!--/.inputText-->
+                    <div class="inputText w-100 mb-2">
+                        <input type="text" name="lastName" id="lastName" placeholder="Last Name" required>
+                    </div><!--/.inputText-->
+                    <div class="inputEmail w-100 mb-2">
+                        <input type="email" name="email" id="email" placeholder="E-mail" required>
+                    </div><!--/.inputEmail-->
+                    <div class="inputPassword w-100">
+                        <input type="password" name="pass" id="pass" placeholder="Password" required>
+                        <i class="fa-regular fa-eye-slash pw-hide"></i>
+                    </div><!--/.inputPassword-->
+                    <div class="checked d-flex justify-content-between mt-3 mb-3">
+                        <div class="check d-flex align-items-center gap-2">
+                            <input type="checkbox" name="checkBox" id="checkBox">
+                            <span>I agree to the Google Terms of Service and
+                                Privacy Policy</span>
+                        </div><!--/.check-->
+                    </div><!--/.checked-->
+                    <button class="btnForm mb-2">Sign in</button>
+                    <div class="signUp d-flex justify-content-evenly">
+                        <p>Are you already a member?</p>
+                        <p class="back"><a href="#">back</a></p>
+                    </div><!--/.signUp-->
+                </form>
+            </div><!--/.form-->
+            <!-- forget password -->
+            <div class="form forget_form">
+                <form action="" class="px-5 py-3">
+                    <h2 class="mb-5 text-center pt-5">Forgot your password?</h2>
+                    <p class="descP w-75 m-auto text-center mb-5">Enter your email or phone number
+                        and recover your account</p>
+                    <div class="inputEmail w-100 mb-3">
+                        <input type="email" name="email" id="email" placeholder="E-mail" required autocomplete="off">
+                    </div><!--/.inputEmail-->
+                    <p class="orText"></p>
+                    <div class="inputNumber mb-3">
+                        <input id="phone" type="tel" placeholder="Phone number">
+                    </div><!--/.inputNumber-->
+                    <button class="btnForm mb-3">Sign in</button>
+                </form>
+            </div><!--/.form-->
+        </div><!--/.form-contact-->
+    </section>
+    <!-- End Section pop form -->
+
+    <!-- Start Section growCards -->
+    <section class="growCards py-5 d-none d-lg-block">
+        <div class="container d-flex gap-5">
+            <div class="cardGrow backImg-1 position-relative flex-grow-1" >
+                <div class="contactCard   position-absolute bottom-0 mb-5 ms-3">
+                    <p>New arrivals <br>
+                        are now in!
+                    </p>
+                    <button class="btnCard">Show collection</button>
+                </div><!--/.contactCard-->
+            </div><!--/.cardGrow-->
+
+            <div class="cardGrow backImg-2 position-relative ">
+                <div class="contactCard  position-absolute bottom-0 mb-5 ms-3">
+                    <p>New arrivals <br>
+                        are now in!
+                    </p>
+                    <button class="btnCard">Show collection</button>
+                </div><!--/.contactCard-->
+            </div><!--/.cardGrow-->
+
+            <div class="cardGrow backImg-3 position-relative ">
+                <div class="contactCard  position-absolute bottom-0 mb-5 ms-3">
+                    <p>New arrivals <br>
+                        are now in!
+                    </p>
+                    <button class="btnCard">Show collection</button>
+                </div><!--/.contactCard-->
+            </div><!--/.cardGrow-->
+        </div><!--/.container-->
+    </section><!--/.growCards-->
+    <!-- End Section growCards -->
+
+    <!-- Start section cardSwiper -->
+    <section class="cards-swiper" id="ShowNew">
+        <div class="contactCardWrapper container">
+            <p>Selected just for you</p>
+            <a href="#">Show more</a>
+        </div><!--/.contactCard-->
+        <i id="left" class="fa-solid fa-left-long"></i>
+        <div class="carousel row container">
+            <div class="swiper-slide-card cardWrapper col-12 col-sm-6 col-lg-4 col-xl-3  ">
+                <a href="pageTwo.html">
+                    <div class="d-flex flex-column align-items-center align-items-sm-start">
+                        <div class="image">
+                            <img src="img/swiper/pic1.svg" alt="img...">
+                        </div><!--/.image-->
+                        <div class="contentCard">
+                            <span class="pricePersonage">30%</span>
+                            <p class="titleCard">T-Shirt Summer Vibes</p>
+                            <div class="priceClothes">
+                                <span class="specilPrice">$89.99</span>
+                                <span class="mainPrice">$119.99</span>
+                            </div><!--/.priceClothes-->
+                        </div><!--/.contentCard-->
+                    </div>
+                </a>
+            </div><!--/.swiper-slide card-->
+    
+            <div class="swiper-slide-card cardWrapper col-12 col-sm-6 col-lg-4 col-xl-3 d-flex flex-column align-items-center align-items-sm-start ">
+                <div class="image">
+                    <img src="img/swiper/pic2.svg" alt="img...">
+                </div><!--/.image-->
+                <div class="contentCard">
+                    <span class="pricePersonage d-none">30%</span>
+                    <p class="titleCard">Loose Knit 3/4 Sleeve</p>
+                    <div class="priceClothes">
+                        <span>$119.99</span>
+                        <span class="d-none">$119.99</span>
+                    </div><!--/.priceClothes-->
+                </div><!--/.contentCard-->
+            </div><!--/.swiper-slide card-->
+    
+            <div class="swiper-slide-card cardWrapper col-12 col-sm-6 col-lg-4 col-xl-3 d-flex flex-column align-items-center align-items-sm-start ">
+                <div class="image">
+                    <img src="img/swiper/pic3.svg" alt="img...">
+                </div><!--/.image-->
+                <div class="contentCard">
+                    <span class="pricePersonage d-none">30%</span>
+                    <p class="titleCard">Basic Slim Fit T-Shirt</p>
+                    <div class="priceClothes">
+                        <span class="">$79.99</span>
+                        <span class="d-none">$119.99</span>
+                    </div><!--/.priceClothes-->
+                </div><!--/.contentCard-->
+            </div><!--/.swiper-slide card-->
+    
+            <div class="swiper-slide-card cardWrapper col-12 col-sm-6 col-lg-4 col-xl-3 d-flex flex-column align-items-center align-items-sm-start ">
+                <div class="image">
+                    <img src="img/swiper/pic4.svg" alt="img...">
+                </div><!--/.image-->
+                <div class="contentCard">
+                    <span class="pricePersonage d-none">30%</span>
+                    <p class="titleCard">Loose Textured T-Shirt</p>
+                    <div class="priceClothes">
+                        <span class="">$119.99</span>
+                        <span class=" d-none">$119.99</span>
+                    </div><!--/.priceClothes-->
+                </div><!--/.contentCard-->
+            </div><!--/.swiper-slide card-->
+    
+            <div class="swiper-slide-card cardWrapper col-12 col-sm-6 col-lg-4 col-xl-3 d-flex flex-column align-items-center align-items-sm-start ">
+                <div class="image">
+                    <img src="img/swiper/pic1.svg" alt="img...">
+                </div><!--/.image-->
+                <div class="contentCard">
+                    <span class="pricePersonage d-none">30%</span>
+                    <p class="titleCard">Loose Textured T-Shirt</p>
+                    <div class="priceClothes">
+                        <span class="">$119.99</span>
+                        <span class=" d-none">$119.99</span>
+                    </div><!--/.priceClothes-->
+                </div><!--/.contentCard-->
+            </div><!--/.swiper-slide card-->
+    
+            <div class="swiper-slide-card cardWrapper col-12 col-sm-6 col-lg-4 col-xl-3 d-flex flex-column align-items-center align-items-sm-start ">
+                <div class="image">
+                    <img src="img/swiper/pic3.svg" alt="img...">
+                </div><!--/.image-->
+                <div class="contentCard">
+                    <span class="pricePersonage d-none">30%</span>
+                    <p class="titleCard">Loose Textured T-Shirt</p>
+                    <div class="priceClothes">
+                        <span class="">$119.99</span>
+                        <span class=" d-none">$119.99</span>
+                    </div><!--/.priceClothes-->
+                </div><!--/.contentCard-->
+            </div><!--/.swiper-slide card-->
+        </div><!--/.swiper mySwiper container-->
+        <i id="right" class="fa-solid fa-right-long"></i>
+    </section>
+    <!-- End section cardSwiper -->
+
+    <!-- Start section Choose us -->
+    <section class="chooseUs py-5">
+        <div class="container">
+            <p class="textAlignCenter">Why should you choose us?</p>
+            <div class="chooseCards row pt-5">
+                <div class="cardChoose col-12 col-sm-6 col-lg-3">
+                    <div class="contImgIcon">
+                        <img src="img/chooseUs/FreeShipping.svg" alt="FreeShippingImg...">
+                    </div><!--/.contImgIcon-->
+                    <h6>Free Shipping</h6>
+                    <p class="w-para">All purchases over $199 are eligible for
+                        free shipping via USPS First Class Mail.</p>
+                </div><!--/.cardChoose-->
+    
+                <div class="cardChoose col-12 col-sm-6 col-lg-3">
+                    <div class="contImgIcon">
+                        <img src="img/chooseUs/Payments.svg" alt="PaymentsImg...">
+                    </div><!--/.contImgIcon-->
+                    <h6>Easy Payments</h6>
+                    <p class="w-para">All payments are processed instantly
+                        over a secure payment protocol.</p>
+                </div><!--/.cardChoose-->
+    
+                <div class="cardChoose col-12 col-sm-6 col-lg-3">
+                    <div class="contImgIcon">
+                        <img src="img/chooseUs/Money.svg" alt="MoneyImg...">
+                    </div><!--/.contImgIcon-->
+                    <h6>Money-Back Guarantee</h6>
+                    <p class="w-para">If an item arrived damaged or you've
+                        changed your mind, you can send it
+                        back for a full refund.</p>
+                </div><!--/.cardChoose-->
+    
+                <div class="cardChoose col-12 col-sm-6 col-lg-3">
+                    <div class="contImgIcon">    
+                        <img src="img/chooseUs/FinestQuality.svg" alt="FinestQualityImg...">
+                    </div><!--/.contImgIcon-->
+                    <h6>Finest Quality</h6>
+                    <p class="w-para">Designed to last, each of our products has
+                        been crafted with the finest materials.</p>
+                </div><!--/.cardChoose-->
+            </div><!--/.chooseCards-->
+        </div><!--/.container-->
+    </section>
+    <!-- End section Choose us -->
+
+    <!-- Start section cards-swiper carouselL -->
+    <section class="cards-swiper py-5">
+        <p class="textAlignCenter">Products in today</p>
+        <div class="container pt-3">
+            <div class="carouselL row">
+                <div class="cardWrapper col-12 col-sm-6 col-md-4 col-lg-3 order-2">
+                    <div class="image">
+                        <img src="img/products/pic1.svg" alt="img...">
+                    </div><!--/.image-->
+                    <div class="contentCard">
+                        <span class="pricePersonage">30%</span>
+                        <p class="titleCard">T-Shirt Summer Vibes</p>
+                        <div class="priceClothes">
+                            <span class="specilPrice">$89.99</span>
+                            <span class="mainPrice">$119.99</span>
+                        </div><!--/.priceClothes-->
+                    </div><!--/.contentCard-->
+                </div><!--/.swiper-slide card-->
+    
+                <div class="cardWrapper col-12 col-sm-6 col-md-4 col-lg-3 order-3">
+                    <div class="image">
+                        <img src="img/products/pic2.svg" alt="img...">
+                    </div><!--/.image-->
+                    <div class="contentCard">
+                        <span class="pricePersonage d-none">30%</span>
+                        <p class="titleCard">Loose Knit 3/4 Sleeve</p>
+                        <div class="priceClothes">
+                            <span>$119.99</span>
+                            <span class="d-none">$119.99</span>
+                        </div><!--/.priceClothes-->
+                    </div><!--/.contentCard-->
+                </div><!--/.swiper-slide card-->
+    
+                <div class="cardWrapper col-12 col-sm-6 col-md-4 col-lg-3 order-0">
+                    <div class="image">
+                        <img src="img/products/pic3.svg" alt="img...">
+                    </div><!--/.image-->
+                    <div class="contentCard">
+                        <span class="pricePersonage d-none">30%</span>
+                        <p class="titleCard">Basic Slim Fit T-Shirt</p>
+                        <div class="priceClothes">
+                            <span class="">$79.99</span>
+                            <span class="d-none">$119.99</span>
+                        </div><!--/.priceClothes-->
+                    </div><!--/.contentCard-->
+                </div><!--/.swiper-slide card-->
+    
+                <div class="cardWrapper col-12 col-sm-6 col-md-4 col-lg-3 order-1">
+                    <div class="image">
+                        <img src="img/products/pic4.svg" alt="img...">
+                    </div><!--/.image-->
+                    <div class="contentCard">
+                        <span class="pricePersonage d-none">30%</span>
+                        <p class="titleCard">Loose Textured T-Shirt</p>
+                        <div class="priceClothes">
+                            <span class="">$119.99</span>
+                            <span class=" d-none">$119.99</span>
+                        </div><!--/.priceClothes-->
+                    </div><!--/.contentCard-->
+                </div><!--/.swiper-slide card-->
+            </div><!--/.swiper mySwiper container-->
+        </div><!--/.container-->
+    </section>
+    <!-- End section cards-swiper carouselL -->
+
+    <!-- Start Section Form -->
+    <section class="submitEmail py-5">
+        <div class="container">
+            <div class="contactFormSubmit row">
+                <h4 class="col-12 col-lg-6">Subscribe to our newsletter and
+                    receive exclusive offers every week</h4>
+                <form action="" class=" col-12 col-lg-6">
+                    <div class="row gap-2">
+                        <input type="email" placeholder="Enter your email" class=" col-12 col-md-8 col-lg-7 col-xl-8 ">
+                        <button type="button" class="btnSubmit d-block col-12 col-md-3 col-lg-4  col-xl-3">Subscribe</button>
+                    </div>
+                </form>
+            </div><!--/.contactFormSubmit-->
+        </div><!--/.container-->
+    </section>
+    <!-- End Section Form -->
+
+    <!-- Start Footer -->
+    <footer class="pt-5">
+        <div class="container ">
+            <div class="row">
+                <div class="footLeft d-grid gap-4 col-12 col-md-6 mb-5">
+                    <div class="logoFoot d-flex align-items-center gap-3">
+                        <div class="logoFooter">    
+                            <img src="img/footer/noun_cloth_2129414.svg" alt="logo...">
+                        </div><!--/.logoFooter-->
+                        <h5 class="titleLogoFoot pt-2"><span>E-</span>Shop</h5>
+                    </div><!--/.logoFoot-->
+                    <div class="contactFootLeft">House My Brand designs clothing for the young, the old &
+                        everyone in between – but most importantly, for the fashionable
+                    </div><!--/.contactFootLeft-->
+                    <div class="linksFooter d-flex gap-4">
+                        <i class="fa-brands fa-facebook-f"></i>
+                        <i class="fa-brands fa-twitter"></i>
+                        <i class="fa-brands fa-linkedin-in"></i>
+                        <i class="fa-brands fa-instagram"></i>
+                        <i class="fa-brands fa-youtube"></i>
+                    </div><!--/.linksFooter-->
+                </div><!--/.footLeft-->
+    
+                <div class="footRight col-12 col-md-6 d-flex justify-content-between flex-wrap">
+                    <div class="contactFooterRight">
+                        <h4 class="fs-5">Shopping online</h4>
+                        <div class="linksTextFootRight">
+                            <a href="#">Order Status</a>
+                            <a href="#">Shipping and Delivery</a>
+                            <a href="#">Returns</a>
+                            <a href="#">Payment Options</a>
+                            <a href="#">Contact Us</a>
+                        </div><!--/.linksTextFootRight-->
+                    </div><!--/.contactFooterRight-->
+    
+                    <div class="contactFooterRight">
+                        <h4 class="fs-5">Information</h4>
+                        <div class="linksTextFootRight">
+                            <a href="#">Gift Cards</a>
+                            <a href="#">Find a store</a>
+                            <a href="#">Newsletter</a>
+                            <a href="#">Bacome a member</a>
+                            <a href="#">Site feedback</a>
+                        </div><!--/.linksTextFootRight-->
+                    </div><!--/.contactFooterRight-->
+    
+                    <div class="contactFooterRight">
+                        <h4 class="fs-5">Contact</h4>
+                        <div class="linksTextFootRight">
+                            <a href="#">store@uikit.com</a>
+                            <a href="#">Hotline: +1 131 138 138</a>
+                        </div><!--/.linksTextFootRight-->
+                    </div><!--/.contactFooterRight-->
+                </div><!--/.footRight-->
+            </div><!--/.row-->
+        </div><!--/.container-->
+        <div class="copyRight">
+            DESIGN BY ICEO.CO - &copy; 2019. ALL RIGHTS RESERVED.
+        </div><!--/.copyRight-->
+    </footer>
+    <!-- End Footer -->
+
+    <!-- + Offcanvas -->
+    <section class="offcanvasss p-0">
+        <div class="offcanvas offcanvas-top" tabindex="-1" id="offcanvasTop" aria-labelledby="offcanvasTopLabel">
+            <div class="shoppingHeader">
+                <div class="container">
+                    <div class="offcanvas-header">
+                        <div class="header-logo d-flex gap-4 align-items-center">
+                            <img src="img/footer/noun_cloth_2129414.svg" alt="logo...">
+                            <p class="cardShop"><span>E-</span>Shop</p>
+                        </div><!--/.header-logo-->
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div><!--/.offcanvas-header-->
+                </div><!--/.container-->
+            </div><!--/.shoppingHeader-->
+            <div class="offcanvas-body">
+                <div class="container">
+                    <div class="d-flex justify-content-between pb-5">
+                        <div class="fs-5 fw-semibold">Shopping Cart</div><!--/.-->
+                        <div class="iconCart">
+                            <span class="fs-4"><i class='bx bx-cart-alt'></i></span>
+                            <span></span>
+                            <span class="fs-4"><i class='bx bxs-truck'></i></span>
+                        </div><!--/.-->
+                    </div><!--/.-->
+    
+                    <div class="contactCartShopping py-5">
+                        <table>
+                            <thead>
+                                <tr class="">
+                                    <th class="">Product</th>
+                                    <th class="">Color</th>
+                                    <th class="">Size</th>
+                                    <th class="">Ammount</th>
+                                    <th class="">Price</th>
+                                    <th class=""></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- <tr class="">
+                                        <td class="d-flex align-items-center gap-1 gap-md-5">
+                                            <div class="imgTD">
+                                                <img src="img/clothes/smallimg/blackClothes.svg" alt="...">
+                                            </div>
+                                            <div class="paraCart">
+                                                <p>T-Shirt Summer Vibes</p>
+                                                <p>#261311</p>
+                                            </div>
+                                        </td>
+                                        <td class="">White</td>
+                                        <td class="">XL</td>
+                                        <td class="">
+                                            <div class="counter">
+                                                <span class="decre">-</span>
+                                                <span class="numClo">1</span>
+                                                <span class="incre">+</span>
+                                            </div>
+                                        </td>
+                                        <td class="">$89.99</td>
+                                        <td class=""><i class="fa-solid fa-trash" style="color: red;cursor: pointer;"></i></td>
+                                    </tr> -->
+                            </tbody>
+                        </table>
+                    </div><!--/.contactCartShopping-->
+    
+                    <div class="row">
+                        <div class="col-12 col-sm-6 col-lg-3 leftIconCart mt-3 d-flex gap-4 align-items-center">
+                            <i class="fa-solid fa-left-long"></i>
+                            <span>Continue Shopping</span>
+                        </div><!--/.-->
+                        <div class="col-12 col-sm-6 col-lg-3 mt-3  position-relative PromoCodeBox">
+                            <input class='PromoCode' type="text" placeholder="Promo Code">
+                            <div class="imgInp"><img src="img/cardShopping/noun_send.svg" alt=""></div>
+                        </div><!--/.-->
+                        <div class="col-12 col-sm-6 col-lg-3 mt-3 d-flex gap-5 align-items-center justify-content-center">
+                            <p class="m-0">Total cost</p>
+                            <p class="m-0">$ <span id="totalPrice">00.00</span></p>
+                        </div><!--/.-->
+                        <div class="col-12 col-sm-6 col-lg-3 mt-3"><button class='btnForm'>CHECKOUT</button></div><!--/.-->
+                    </div><!--/.-->
+                </div><!--/.container-->
+            </div><!--/.-->
+        </div><!--/.offcanvasTop-->
+    </section>
+    <!-- - Offcanvas -->
+    <button id="goUp" class="d-none"><i class="fa-solid fa-up-long"></i></button>
+
+
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <!-- Swiper js link CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <!-- intl-tel-input tel -->
+    <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@18.1.1/build/js/intlTelInput.min.js"></script>
+    <!-- Library bootStrap JavaScript -->
+    <script src="bootstrap/bootstrap.bundle.js"></script>
+    <!-- my link Js -->
+    <script src="js/main.js"></script>
+    <!--  -->
+    <script src="js/shared.js"></script>
+    <!-- cart shopping js -->
+    <script src="js/shoppingCart.js"></script>
+    <!--  -->
+    <script src="js/swiperCard.js"></script>
+    <!--  -->
+    <script src="js/formUser.js"></script>
+</body>
+</html>

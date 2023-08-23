@@ -1,0 +1,133 @@
+.cards-swiper {
+    padding: 50px 10px;
+    position: relative;
+    /* font-family: 'Poppins', sans-serif; */
+}
+
+.carousel .cardWrapper {
+    height: fit-content;
+    position: relative;
+    cursor: pointer;
+    /* width: 300px; */
+}
+
+.carousel {
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
+    flex-wrap: nowrap;
+    scroll-behavior: smooth;
+    /* gap: 55px; */
+}
+
+.carousel.dragging {
+    cursor: grab;
+    scroll-behavior: auto;
+}
+
+.carousel.dragging .cardWrapper {
+    pointer-events: none;
+}
+
+.image {
+    /* width: 280px;
+    height: 390px;
+    position: relative; */
+    width: 100%;
+    height: 80%;
+    position: relative;
+}
+
+.pricePersonage {
+    position: absolute;
+    inset: 30px;
+    background-color: var(--red-color);
+    width: fit-content;
+    height: fit-content;
+    color: var(--wh-color);
+    padding: 7px 15px;
+    border-radius: 20px;
+}
+
+.contentCard {
+    padding-left: 3px;
+}
+
+.titleCard {
+    color: var(--grayText-color);
+    margin-top: 20px;
+}
+
+.priceClothes {
+    display: flex;
+    gap: 50px;
+}
+
+.priceClothes .specilPrice {
+    color: var(--red-color);
+}
+
+.priceClothes .mainPrice {
+    color: var(--grayText-color);
+}
+
+.contactCardWrapper {
+    /* width: 85%; */
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+
+.contactCardWrapper p {
+    font-size: 25px;
+    margin: 0;
+}
+
+.contactCardWrapper a {
+    color: var(--bk-color);
+    text-decoration: none;
+    border: 2px solid rgba(0, 0, 0, 0.242);
+    border-radius: 20px;
+    padding: 8px 20px;
+}
+
+.cards-swiper i {
+    font-size: 30px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    z-index: 1;
+}
+
+.cards-swiper i:nth-of-type(1) {
+    left: 10px;
+}
+
+.cards-swiper i:nth-of-type(2) {
+    right: 10px;
+}
+
+/* @media (0 < width <= 768px) {
+    .carousel .cardWrapper {
+        width: 260px;
+}} */
+
+@media (0 < width < 576px) {
+    .carousel {
+        width: 300px;
+    }
+}
+
+@media (0px < width <=450px) {
+    .contactCardWrapper p {
+        font-size: 18px;
+    }
+
+    .contactCardWrapper a {
+        padding: 5px 15px;
+        font-size: .7rem;
+    }
+}

@@ -1,0 +1,38 @@
+.activeBreadCramp {
+    color:var(--bk-color) !important ;
+}
+
+/* .breadCrampLinksAll .container {
+    gap: 23rem;
+} */
+
+.breadCramp i , .breadCramp a {
+    color: var(--breadCramp);
+}
+
+.breadCramp a:not(:last-of-type)::after {
+    content: "/";
+    margin: 0 10px;
+}
+
+.breadCramp a:hover,.breadCramp a:hover i {
+    color: var(--prem-color);
+}
+
+.breadCramp a {
+    font-size: .7rem;
+}
+
+.breadCramp i {
+    font-size: 1rem;
+    vertical-align: middle;
+}
+
+.descriptionCardIcon h6,
+.descriptionCardIcon p {
+    font-size: .7rem;
+}
+
+.descriptionCardIcon p {
+    font-size: .7rem;
+}

@@ -1,0 +1,281 @@
+//! cart Shopping 
+const 
+    addCart = document.querySelector("#addCart"),
+    imgClothesBeg = document.querySelector(".BegImage img.begImg"),
+    nameClothes = document.querySelector("#nameClothes"),
+    priceClothes = document.querySelector("[data-price='price']"),
+    sizeClothes = document.querySelector("#sizeClothes"),
+    numCart = document.querySelector(".numCart"),
+    totalPrice = document.querySelector("#offcanvasTop #totalPrice"),
+    offcanvas = document.querySelector("#offcanvasTop tbody"),
+    numShopping = document.querySelector("#numShopping");
+
+let arrClothes =JSON.parse(localStorage.getItem("data clothes")) || []
+    
+
+// on click add card arrClothes
+addCart.addEventListener("click" , _=>{
+    // Call Function Collect clothes data and storage in local storage
+    collectData();
+    
+});
+    
+// Function Collect clothes data in storage in arrClothes then in local storage
+function collectData() {
+    // Collect data for the choses clothes
+    let imgSrc = imgClothesBeg.src,
+        name = nameClothes.innerText,
+        price = priceClothes.innerText,
+        size = sizeClothes.innerText,
+        count = numCart.innerText;
+
+    let positionClothes = arrClothes.findIndex(item =>{
+        return item.name === name &&
+                item.size === size &&
+                item.img === imgSrc
+    })
+
+    if(positionClothes >= 0) {
+        let UpdateCount = +arrClothes[positionClothes].count
+    
+        UpdateCount += +count;
+        arrClothes[positionClothes].count = UpdateCount
+        storeEnd(arrClothes)
+
+    }else {
+        // Storage the choses clothes in clothes object
+        let clothesOb = {} 
+        clothesOb.img = imgSrc
+        clothesOb.name = name
+        clothesOb.price = price
+        clothesOb.size = size
+        clothesOb.count = count
+        // clothesOb.color = 
+        
+        // Storage choses clothes object in arrClothes array 
+        arrClothes.push(clothesOb)
+    
+        storeEnd(arrClothes)
+    }
+}
+
+// Function show all clothes store in local storage in list clothes 
+function showClothes () {
+    let totalSum = 0;
+    offcanvas.innerHTML = "" 
+    arrClothes.forEach((clothes , ind) => {
+        let totalOneProduct = clothes.price * clothes.count;
+        let clothesView = ` <tr class="">
+                        <td class="d-flex align-items-center gap-1 gap-md-5">
+                            <div class="imgTD">
+                                <img src="${clothes.img}" alt="...">
+                            </div>
+                            <div class="paraCart">
+                                <p>${clothes.name}</p>
+                                <p>#261311</p>
+                            </div>
+                        </td>
+                        <td class="">White</td>
+                        <td class="">${clothes.size}</td>
+                        <td class="">
+                            <div class="counter">
+                                <span class="decre" id="decreCart">-</span>
+                                <span class="numClo" id="countCart">${clothes.count}</span>
+                                <span class="incre" id="increCart">+</span>
+                            </div>
+                        </td>
+                        <td class="">$${(totalOneProduct).toFixed(2)}</td>
+                        <td class=""><i class="fa-solid fa-trash" data-id="${ind}" id="delete" style="color: red;cursor: pointer;"></i></td>
+                    </tr>
+                `
+        offcanvas.innerHTML += clothesView;
+        totalSum += totalOneProduct;
+    });  
+    totalPrice.innerText = totalSum.toFixed(2);
+    numShopping.innerText = arrClothes.length;
+}
+
+// Call Function show update arrClothes
+showClothes()
+
+// delete on clothes
+addEventListener("click" , event=>{
+    if (event.target.id == "delete") {
+        let idd = event.target.getAttribute("data-id");
+        arrClothes.splice(idd,1)
+        storeEnd(arrClothes)
+    }
+})
+
+function storeEnd(arr) {
+    localStorage.setItem("data clothes" ,JSON.stringify(arr))
+    showClothes()
+}
+
+
+let 
+decreCart = document.querySelectorAll("#decreCart"),
+countCart = document.querySelectorAll("#countCart"),
+increCart = document.querySelectorAll("#increCart");
+
+for (const i in increCart) {
+    increCart[i].onclick = _=> {
+        let numberCart = Number(countCart[i].innerText);
+        let productPrice = parseFloat(arrClothes[i].price);
+        
+        countCart[i].innerText = numberCart + 1;
+        arrClothes[i].count = countCart[i].innerText;
+
+        let totalOneProduct = productPrice * arrClothes[i].count;
+        arrClothes[i].total = totalOneProduct;
+        
+        updateTotalPrice();
+        storeEnd(arrClothes);
+    };
+}
+
+for (const i in decreCart) {
+    decreCart[i].onclick = _=> {
+        let numberCart = Number(countCart[i].innerText);
+        let productPrice = parseFloat(arrClothes[i].price);
+        
+        if (numberCart > 1) {
+            countCart[i].innerText = numberCart - 1;
+            arrClothes[i].count = countCart[i].innerText;
+
+            let totalOneProduct = productPrice * arrClothes[i].count;
+            arrClothes[i].total = totalOneProduct;
+
+            updateTotalPrice();
+            storeEnd(arrClothes);
+        }
+    };
+}
+
+function updateTotalPrice() {
+    let totalSum = arrClothes.reduce((sum, clothes) => sum + parseFloat(clothes.total), 0);
+    totalPrice.innerText = totalSum.toFixed(2);
+    numShopping.innerText = arrClothes.length;
+}
+    // console.log(decreCart , countCart , increCart);
+    
+    // increCart.forEach(inc => {
+    //     inc.onclick = _=> {
+    //         let numberCart = Number(inc.innerText)
+    //         countCart.forEach(num => {
+    //             num.innerText = numberCart + 1
+    //         });
+    //         console.log(numberCart);
+    //     }
+    // });
+
+
+
+    // increCart[0].onclick = function(){
+    //     // let numberCart = Number(countCart[0].innerText)
+    // // countCart[0].innerText = numberCart + 1
+    //     console.log(numberCart);
+    // }
+
+    // decreCart[0].onclick = function(){
+    //     let numberCart = Number(countCart[0].innerText)
+    //     if(countCart[0].innerText > 1){
+    //         countCart[0].innerText = numberCart -1
+    //     }
+    //     console.log(numberCart);
+    // }
+
+
+// decreCart.forEach(dec => {
+//     dec.onclick = _=>{
+//         console.log("ok");
+//     }
+// });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ... الأكواد السابقة كما هي
+
+// اضبط الحدث المستمع على الواجهة الخارجية (Delegation)
+offcanvas.addEventListener("click", event => {
+    if (event.target.classList.contains("incre")) {
+        handleIncrease(event.target);
+    } else if (event.target.classList.contains("decre")) {
+        handleDecrease(event.target);
+    } else if (event.target.id === "delete") {
+        handleDelete(event.target);
+    }
+});
+
+function handleIncrease(button) {
+    let index = button.getAttribute("data-index");
+    let numberCart = Number(countCart[index].innerText);
+    let productPrice = parseFloat(arrClothes[index].price);
+    
+    numberCart += 1;
+    countCart[index].innerText = numberCart;
+    arrClothes[index].count = numberCart;
+
+    let totalOneProduct = productPrice * numberCart;
+    arrClothes[index].total = totalOneProduct;
+
+    updateTotalPrice();
+    storeEnd(arrClothes);
+}
+
+function handleDecrease(button) {
+    let index = button.getAttribute("data-index");
+    let numberCart = Number(countCart[index].innerText);
+    let productPrice = parseFloat(arrClothes[index].price);
+    
+    if (numberCart > 1) {
+        numberCart -= 1;
+        countCart[index].innerText = numberCart;
+        arrClothes[index].count = numberCart;
+
+        let totalOneProduct = productPrice * numberCart;
+        arrClothes[index].total = totalOneProduct;
+
+        updateTotalPrice();
+        storeEnd(arrClothes);
+    }
+}
+
+function handleDelete(icon) {
+    let index = icon.getAttribute("data-id");
+    arrClothes.splice(index, 1);
+    storeEnd(arrClothes);
+    updateTotalPrice();
+}
+
+// ... باقي الكود كما هو

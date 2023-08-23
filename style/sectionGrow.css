@@ -1,0 +1,39 @@
+.cardGrow.backImg-1 , .cardGrow.backImg-2 ,.cardGrow.backImg-3 {
+    width: 300px;
+    height: 400px;
+    /* background-color: aqua; */
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    cursor: pointer;
+}
+
+.cardGrow {
+    transition: .4s ease;
+    -webkit-transition: .4s ease;
+    -moz-transition: .4s ease;
+    -ms-transition: .4s ease;
+    -o-transition: .4s ease;
+}
+
+.cardGrow.backImg-1 {
+    background: linear-gradient(#00000045, #00000045), url(../img/grow/pic1.svg) ;
+    background-position: 60% 0%;
+}
+
+.cardGrow.backImg-2 {
+    background: linear-gradient(#00000045, #00000045), url(../img/grow/pic2.svg);
+    background-position: 100% 0%;
+}
+
+.cardGrow.backImg-3 {
+    background: linear-gradient(#00000045, #00000045), url(../img/grow/pic3.svg);
+    background-position: 100% 70%;
+}
+
+.contactCard p {
+    color: var(--wh-color);
+    font-size: 1.2rem;
+    line-height: 2;
+    cursor:auto;
+    width: fit-content;
+}

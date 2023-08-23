@@ -1,0 +1,41 @@
+.textAlignCenter {
+    text-align: center;
+    font-size: 30px;
+    font-weight: 300;
+    padding: 10px 0;
+}
+
+.w-para {
+    max-width: 285px;
+    line-height: 2;
+}
+
+.contImgIcon {
+    width: 80px;
+    height: 80px;
+}
+
+.cardChoose {
+    transition: all .4s ease;
+    -webkit-transition: all .4s ease;
+    -moz-transition: all .4s ease;
+    -ms-transition: all .4s ease;
+    -o-transition: all .4s ease;
+    margin-bottom: 20px;
+}
+
+.cardChoose h6 {
+    margin-top: 20px;
+}
+
+@media (0 <=width <=576px) {
+    .cardChoose {
+        width: fit-content;
+        margin: auto;
+        text-align: center;
+    }
+
+    .contImgIcon {
+        margin: auto;
+    }
+}

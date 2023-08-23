@@ -1,0 +1,80 @@
+.submitEmail .container {
+    background: linear-gradient(#00000050, #00000050), url(../img/form/pic1.svg) no-repeat;
+    min-height: 250px;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: 0 100%;
+    display: grid;
+    place-items: center;
+}
+
+.contactFormSubmit {
+    width: 85%;
+    margin: auto;
+}
+
+.submitEmail h4 {
+    color: var(--wh-color);
+    font-size: 30px;
+}
+
+.submitEmail input[type='email'] {
+    border: 0;
+    outline: 0;
+    padding: 15px 30px;
+    /* width: 85%; */
+    border-radius: 50px;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    -ms-border-radius: 50px;
+    -o-border-radius: 50px;
+    height: 55px;
+}
+
+.submitEmail .btnSubmit {
+    border: 0;
+    outline: 0;
+    background-color: var(--prem-color);
+    padding: 10px 30px;
+    border-radius: 50px;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    -ms-border-radius: 50px;
+    -o-border-radius: 50px;
+    transition: all .3s ease;
+    border: 2px solid transparent;
+    -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    -ms-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    height: 55px;
+}
+
+.submitEmail .btnSubmit:hover {
+    border-color: var(--prem-color);
+    color: var(--wh-color);
+    background-color: var(--hoverBtnForm);
+}
+
+@media (0 < width <= 576px) {
+    .submitEmail .container {
+        background-image: none;
+        background-color: var(--gray-color);
+    }
+    .contactFormSubmit h4 {
+        font-size: 1.5rem;
+        text-align: center;
+        color: var(--grayText-color);
+    }
+}
+
+@media (0 < width <=400px) {
+    .contactFormSubmit h4 {
+        font-size: 1.2rem;
+    }
+}
+
+/* .submitEmail form {
+    display: flex;
+    gap: 20px;
+} */

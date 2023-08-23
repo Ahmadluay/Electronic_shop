@@ -1,0 +1,76 @@
+.textAlignCenter {
+    text-align: center;
+    font-size: 30px;
+    font-weight: 300;
+    padding: 10px 0;
+}
+
+.carouselL {
+    width: fit-content;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.carouselL .cardWrapper {
+    width: fit-content;
+    height: fit-content;
+    position: relative;
+    margin-bottom: 40px;
+}
+
+/* .image {
+    width: 280px;
+    height: 390px;
+    position: relative;
+} */
+
+.pricePersonage {
+    position: absolute;
+    inset: 30px;
+    background-color: var(--red-color);
+    width: fit-content;
+    height: fit-content;
+    color: var(--wh-color);
+    padding: 7px 15px;
+    border-radius: 20px;
+}
+
+.contentCard {
+    padding-left: 3px;
+}
+
+.titleCard {
+    color: var(--grayText-color);
+    margin-top: 20px;
+}
+
+.priceClothes {
+    display: flex;
+    gap: 50px;
+}
+
+.priceClothes .specilPrice {
+    color: var(--red-color);
+}
+
+.priceClothes .mainPrice {
+    color: var(--gray-color);
+}
+
+@media (0 < width <= 576px) {
+    .pricePersonage {
+        padding: 1px 5px;
+        font-size: .7rem;
+}
+.textAlignCenter {
+    font-size: 25px;
+}
+
+}
+
+@media (0<=width <=768px) {
+    .carouselL .cardWrapper {
+        margin: 0 auto 40px auto;
+    }
+}

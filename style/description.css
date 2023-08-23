@@ -1,0 +1,199 @@
+.descriptionLink {
+    display: flex;
+    width: fit-content;
+    margin: auto;
+    align-items: center;
+}
+
+.DescImg {
+    width: 80px;
+    height: 80px;
+}
+
+.DescImg img,
+.contactStartDivReviews img,
+.start-flex img,
+.userCont img {
+    width: fit-content;
+    height: fit-content;
+    object-fit: cover;
+}
+
+
+
+.descriptionLink .descriptionPara {
+    /* color: #aaa; */
+    color: var(--breadCramp);
+    border: 1px solid transparent;
+    padding: 10px 50px;
+    cursor: pointer;
+    transition: all .2s;
+    -webkit-transition: all .2s;
+    -moz-transition: all .2s;
+    -ms-transition: all .2s;
+    -o-transition: all .2s;
+    border-radius: 50px;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    -ms-border-radius: 50px;
+    -o-border-radius: 50px;
+}
+
+.descriptionLink .descriptionParaActive {
+    color: var(--bk-color);
+    border-color:var(--prem-color);
+}
+
+@media (0 <=width <=400px) {
+    .descriptionLink {
+        flex-direction: column;
+    }
+
+}
+
+.contactAllTransform {
+    width: fit-content;
+    margin: 5rem auto;
+    transition: all .4s;
+    -webkit-transition: all .4s;
+    -moz-transition: all .4s;
+    -ms-transition: all .4s;
+    -o-transition: all .4s;
+}
+
+.lineHeight {
+    line-height: 1;
+}
+
+.back_width {
+    height: 5px;
+    width: 150px;
+    background-color: rgb(202, 202, 202);
+    border-radius: 50px;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    -ms-border-radius: 50px;
+    -o-border-radius: 50px;
+    overflow: hidden;
+}
+
+.back_width .metColorOne,
+.back_width .metColorTwo,
+.back_width .metColorThree,
+.back_width .metColorFore,
+.back_width .metColorFife {
+    height: 100%;
+    width: 0;
+    display: block;
+    background-color: var(--prem-color);
+    border-radius: 50px;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    -ms-border-radius: 50px;
+    -o-border-radius: 50px;
+
+    animation: move 1s both;
+    -webkit-animation: move 1s both;
+}
+
+.back_width .metColorOne {
+    --w: 0%;
+}
+
+.back_width .metColorTwo {
+    --w: 0%;
+}
+
+.back_width .metColorThree {
+    --w: 20%;
+}
+
+.back_width .metColorFore {
+    --w: 45%
+}
+
+.back_width .metColorFife {
+    --w: 75%
+}
+
+@keyframes move {
+    0% {
+        width: 0;
+    }
+
+    100% {
+        width: var(--w);
+    }
+
+}
+
+.descParameterLeftBtn {
+    border: 0;
+    outline: 0;
+    background-color: var(--prem-color);
+    padding: .6rem 2rem;
+    border-radius: 3rem;
+    -webkit-border-radius: 3rem;
+    -moz-border-radius: 3rem;
+    -ms-border-radius: 3rem;
+    -o-border-radius: 3rem;
+    margin-top: 2.5rem;
+    border: 2px solid transparent;
+    transition: all .4s ease;
+    -webkit-transition: all .4s ease;
+    -moz-transition: all .4s ease;
+    -ms-transition: all .4s ease;
+    -o-transition: all .4s ease;
+}
+
+.descParameterLeftBtn:hover {
+    background-color: transparent;
+    border-color: var(--prem-color);
+    box-shadow: 0 0 15px 15px var(--prem-color) inset,
+        0 0 15px var(--prem-color);
+}
+
+.descParameterLeftBtn:active {
+    transform: scale(.97);
+    -webkit-transform: scale(.97);
+    -moz-transform: scale(.97);
+    -ms-transform: scale(.97);
+    -o-transform: scale(.97);
+}
+
+.imgRTContReviews {
+    width: 45px;
+    height: 45px;
+    background-color: var(--grayText-color);
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    overflow: hidden;
+    margin-top: 5px;
+}
+
+/* .imgRTContReviews img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+} */
+
+.nameContact,
+.descriptionDivReviewsd {
+    font-size: 12px;
+}
+
+.contD-rt {
+    height: fit-content;
+    max-width: 565px;
+}
+
+.contactDescriptionPara {
+    transition: all 1s ease;
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    -o-transition: all 1s ease;
+}

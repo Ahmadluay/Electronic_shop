@@ -1,0 +1,84 @@
+.contactFootLeft {
+    line-height: 2;
+}
+
+.titleLogoFoot span {
+    color: var(--prem-color);
+}
+
+.logoFooter {
+    width: 60px;
+}
+
+.linksFooter i {
+    font-size: 20px;
+    color: var(--gray-color);
+    cursor: pointer;
+    transition: all .4s ease;
+    -webkit-transition: all .4s ease;
+    -moz-transition: all .4s ease;
+    -ms-transition: all .4s ease;
+    -o-transition: all .4s ease;
+}
+
+.linksFooter i:hover {
+    transform: scale(1.4);
+    -webkit-transform: scale(1.4);
+    -moz-transform: scale(1.4);
+    -ms-transform: scale(1.4);
+    -o-transform: scale(1.4);
+}
+
+.linksFooter i:nth-child(1):hover {
+    color: #05f;
+}
+
+.linksFooter i:nth-child(2):hover {
+    color: #00cefc;
+}
+
+.linksFooter i:nth-child(3):hover {
+    color: rgb(46, 94, 189);
+}
+
+.linksFooter i:nth-child(4):hover {
+    /* background-image: linear-gradient(#0f0,#f00); */
+    color: #d30058;
+
+}
+
+.linksFooter i:nth-child(5):hover {
+    color: #f00;
+}
+
+.linksTextFootRight {
+    margin-top: 20px;
+    display: grid;
+    margin-bottom: 40px;
+}
+
+.linksTextFootRight a {
+    text-decoration: none;
+    color: var(--bk-color);
+    transition: transform .4s ease, color .2s ease;
+    -webkit-transition: transform .4s ease, color .2s ease;
+    -moz-transition: transform .4s ease, color .2s ease;
+    -ms-transition: transform .4s ease, color .2s ease;
+    -o-transition: transform .4s ease, color .2s ease;
+}
+
+.linksTextFootRight a:hover {
+    transform: translateX(10px);
+    -webkit-transform: translateX(10px);
+    -moz-transform: translateX(10px);
+    -ms-transform: translateX(10px);
+    -o-transform: translateX(10px);
+    color: var(--prem-color);
+}
+
+.copyRight {
+    border-top: 1px solid #00000016;
+    padding: 15px 0;
+    text-align: center;
+    font-size: 15px;
+}
